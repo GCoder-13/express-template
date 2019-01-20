@@ -1,0 +1,77 @@
+{
+  "env": {
+    "node": true
+  },
+  "extends": [
+    "node",
+    "standard",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:node/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack/webpack.common.js"
+      }
+    }
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1,
+        "ArrayExpression": 1,
+        "MemberExpression": 1,
+        "ObjectExpression": 1,
+        "CallExpression": { "arguments": 1 }
+      }
+    ],
+    "semi": ["error", "never"],
+    "quotes": ["error", "single" ],
+    "node/exports-style": ["error", "exports"],
+    "arrow-parens": [
+      "error",
+      "as-needed",
+      { "requireForBlockBody": true }
+    ],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "array-bracket-spacing": [
+      "error", 
+      "always",
+      {
+        "singleValue": false,
+        "objectsInArrays": false,
+        "arraysInArrays": false
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "generator-star-spacing": [
+      "error",
+      { "before": false, "after": true }
+    ],
+    "newline-before-return": "error",
+    "linebreak-style": ["warn", "unix"],
+    "camelcase": "warn",
+    "no-console": "warn",
+    "vars-on-top": "warn",
+    "node/no-unsupported-features/es-syntax": "off",
+    "import/no-nodejs-modules": "off",
+    "no-unreachable": "off"
+  }
+}

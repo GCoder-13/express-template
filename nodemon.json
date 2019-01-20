@@ -1,0 +1,7 @@
+{
+  "script": "./dist",
+  "watch":  "./dist/server.js",
+  "ignore": [
+    "node_modules/**"
+  ]
+}
