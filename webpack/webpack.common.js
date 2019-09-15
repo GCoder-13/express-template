@@ -1,6 +1,6 @@
 const path = require('path')
 const nodeExternals = require('webpack-node-externals')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
   target: 'node',
@@ -25,10 +25,9 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(
-      ['dist'],
-      { root: path.resolve(__dirname, '..') }
-    )
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist')],
+    }),
   ],
   module: {
     rules: [
