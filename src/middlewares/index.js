@@ -1,2 +1,7 @@
-export errorHandler from './errorHandler'
-export notFoundErrorHandler from './notFoundErrorHandler'
+import { Router } from 'express'
+
+const middlewares = Router()
+
+/* Middlewares */
+
+export default middlewares

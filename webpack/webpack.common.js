@@ -18,7 +18,7 @@ module.exports = {
   resolve: {
     alias: {
       src: path.resolve(__dirname, '../src'),
-      assets: path.resolve(__dirname, '../src/assets'),
+      controllers: path.resolve(__dirname, '../src/controllers'),
       middlewares: path.resolve(__dirname, '../src/middlewares'),
       routes: path.resolve(__dirname, '../src/routes'),
       utils: path.resolve(__dirname, '../src/utils')

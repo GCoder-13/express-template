@@ -1,23 +1,19 @@
 import express from 'express'
-import cookieParser from 'cookie-parser'
+import bodyParser from 'body-parser'
+import cors from 'cors'
 import logger from 'morgan'
 
-import apiRouter from 'routes/api'
-import { errorHandler, notFoundErrorHandler } from 'middlewares'
+import middlewares from 'middlewares'
+import routes from 'routes'
 
 const app = express()
 
+app.use(cors())
 app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
-app.use(cookieParser())
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
-app.use('/api', apiRouter)
-
-// catch 404 and forward to error handler
-app.use(notFoundErrorHandler)
-
-// error handler
-app.use(errorHandler)
+app.use(middlewares)
+app.use(routes)
 
 export default app

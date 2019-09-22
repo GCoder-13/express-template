@@ -1,6 +1,16 @@
 {
-  "name": "node-js-template",
+  "name": "node.js-template",
   "version": "1.0.0",
+  "license": "MIT",
+  "author": "Andrey Khomutovskiy",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GCoder-13/node.js-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GCoder-13/node.js-template/issues"
+  },
+  "homepage": "https://github.com/GCoder-13/node.js-template#readme",
   "scripts": {
     "start": "node dist/server.js",
     "build": "webpack --progress --config webpack/webpack.prod.js",
@@ -10,10 +20,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.0",
-    "cookie-parser": "^1.4.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
-    "http-errors": "^1.7.3",
     "morgan": "^1.9.1",
     "winston": "^3.2.1"
   },
