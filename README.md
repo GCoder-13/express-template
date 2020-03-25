@@ -1,4 +1,4 @@
-# node.js-template
+# express-template
 
 ## ENV
 Create .env file and add all the variables ([Example][env-example])
@@ -29,4 +29,4 @@ Start server
 $ npm start
 ```
 
-[env-example]: https://github.com/GCoder-13/node.js-template/blob/master/.env.example
+[env-example]: https://github.com/GCoder-13/express-template/blob/master/.env.example
