@@ -1,7 +1,7 @@
-import { Router } from 'express'
+import { Router } from 'express';
 
-const middlewares = Router()
+const middlewares = Router();
 
 /* Middlewares */
 
-export default middlewares
+export default middlewares;

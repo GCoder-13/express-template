@@ -1,4 +1,4 @@
-import { createLogger, transports, format, config } from 'winston'
+import { createLogger, transports, format, config } from 'winston';
 
 export default createLogger({
   level: process.env.LOGGING_LEVEL || 'silly',
@@ -6,9 +6,9 @@ export default createLogger({
   format: format.combine(
     format.colorize(),
     format.splat(),
-    format.simple()
+    format.simple(),
   ),
   transports: [
-    new transports.Console()
-  ]
-})
+    new transports.Console(),
+  ],
+});

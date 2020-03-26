@@ -19,12 +19,14 @@
   },
   "settings": {
     "import/resolver": {
+      "node": {},
       "webpack": {
         "config": "webpack/webpack.common.js"
       }
     }
   },
   "rules": {
+    "semi": ["error", "always"],
     "indent": [
       "error",
       2,
@@ -36,6 +38,7 @@
         "CallExpression": { "arguments": 1 }
       }
     ],
+    "comma-dangle": ["error", "always-multiline"],
     "quotes": ["error", "single" ],
     "node/exports-style": ["error", "exports"],
     "arrow-parens": [
@@ -52,7 +55,7 @@
       }
     ],
     "array-bracket-spacing": [
-      "error", 
+      "error",
       "always",
       {
         "singleValue": false,
@@ -76,6 +79,7 @@
     "node/no-missing-import": "off",
     "node/no-unsupported-features/es-syntax": "off",
     "import/no-nodejs-modules": "off",
+    "import/no-namespace": "off",
     "no-unreachable": "off"
   }
 }

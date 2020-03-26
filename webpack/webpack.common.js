@@ -1,6 +1,7 @@
-const path = require('path')
-const nodeExternals = require('webpack-node-externals')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const nodeExternals = require('webpack-node-externals');
+const Dotenv = require('dotenv-webpack');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   target: 'node',
@@ -8,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     publicPath: '/',
-    filename: 'server.js'
+    filename: 'server.js',
   },
   node: {
     __dirname: false,
@@ -17,14 +18,11 @@ module.exports = {
   externals: [nodeExternals()],
   resolve: {
     alias: {
-      src: path.resolve(__dirname, '../src'),
-      controllers: path.resolve(__dirname, '../src/controllers'),
-      middlewares: path.resolve(__dirname, '../src/middlewares'),
-      routes: path.resolve(__dirname, '../src/routes'),
-      utils: path.resolve(__dirname, '../src/utils')
-    }
+      '@': path.resolve(__dirname, '../src'),
+    },
   },
   plugins: [
+    new Dotenv(),
     new CleanWebpackPlugin({
       cleanOnceBeforeBuildPatterns: [path.resolve(__dirname, '../dist')],
     }),
@@ -36,10 +34,10 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         use: [
           {
-            loader: 'babel-loader'
-          }
-        ]
-      }
-    ]
-  }
-}
+            loader: 'babel-loader',
+          },
+        ],
+      },
+    ],
+  },
+};

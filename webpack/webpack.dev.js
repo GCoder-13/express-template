@@ -1,7 +1,7 @@
-const path = require('path')
-const merge = require('webpack-merge')
-const NodemonPlugin = require('nodemon-webpack-plugin')
-const common = require('./webpack.common.js')
+const path = require('path');
+const merge = require('webpack-merge');
+const NodemonPlugin = require('nodemon-webpack-plugin');
+const common = require('./webpack.common.js');
 
 module.exports = (env = {}) => merge([
   common,
@@ -11,8 +11,8 @@ module.exports = (env = {}) => merge([
     devtool: 'cheap-module-eval-source-map',
     plugins: [
       new NodemonPlugin({
-        nodeArgs: env.debug ? ['--inspect-brk'] : []
-      })
-    ]
-  }
-])
+        nodeArgs: env.debug ? ['--inspect-brk'] : [],
+      }),
+    ],
+  },
+]);
